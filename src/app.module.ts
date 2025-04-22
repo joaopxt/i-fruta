@@ -10,6 +10,7 @@ import { Veiculo } from './entities/veiculo.entity';
 import { EntregadorModule } from './entregador/entregador.module';
 import { Corrida } from './entities/corrida.entity';
 import { Uf } from './entities/uf.entity';
+import { EstabelecimentosModule } from './estabelecimentos/estabelecimentos.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { Uf } from './entities/uf.entity';
       Uf,
     ]),
     EntregadorModule,
+    EstabelecimentosModule,
   ],
   // controllers: [AppController],
   providers: [AppService],
