@@ -7,6 +7,9 @@ import { Endereco } from './entities/endereco.entity';
 import { Cidade } from './entities/cidade.entity';
 import { Estabelecimento } from './entities/estabelecimento.entity';
 import { Veiculo } from './entities/veiculo.entity';
+import { EntregadorModule } from './entregador/entregador.module';
+import { Corrida } from './entities/corrida.entity';
+import { Uf } from './entities/uf.entity';
 
 @Module({
   imports: [
@@ -23,7 +26,10 @@ import { Veiculo } from './entities/veiculo.entity';
       Cidade,
       Estabelecimento,
       Veiculo,
+      Corrida,
+      Uf,
     ]),
+    EntregadorModule,
   ],
   // controllers: [AppController],
   providers: [AppService],

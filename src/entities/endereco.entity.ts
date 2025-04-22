@@ -8,6 +8,7 @@ import {
 } from 'typeorm';
 import { Entregador } from './entregador.entity';
 import { Cidade } from './cidade.entity';
+import { Uf } from './uf.entity';
 
 @Entity()
 export class Endereco {
@@ -32,4 +33,7 @@ export class Endereco {
 
   @ManyToOne(() => Cidade, (cidade) => cidade.assignee)
   cidade: Cidade;
+
+  @ManyToOne(() => Uf, (uf) => uf.assignee)
+  uf: Uf;
 }

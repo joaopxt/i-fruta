@@ -5,6 +5,9 @@ import { Entregador } from './entities/entregador.entity';
 import { Veiculo } from './entities/veiculo.entity';
 import { Estabelecimento } from './entities/estabelecimento.entity';
 import { Endereco } from './entities/endereco.entity';
+import { Cidade } from './entities/cidade.entity';
+import { Uf } from './entities/uf.entity';
+import { Corrida } from './entities/corrida.entity';
 
 @Injectable()
 export class AppService {
@@ -81,6 +84,55 @@ export class AppService {
         complemento: 'Ed. Águas Claras, AP 105',
         rua: 'Avenida das Araucárias, 1030',
       });
+      await db.save(enderecoTeste1);
+
+      const enderecoTeste2 = db.create(Endereco, {
+        entregador: entregadorTeste2,
+        cep: 71984240,
+        numero: 22,
+        complemento: 'Ed. Top Life, AP 302',
+        rua: 'Avenida das Castanheiras, 901',
+      });
+      await db.save(enderecoTeste2);
+
+      const cidade1 = db.create(Cidade, {
+        nome: 'Águas Claras',
+        assignee: [enderecoTeste1],
+      });
+      await db.save(cidade1);
+
+      enderecoTeste1.cidade = cidade1;
+      await db.save(enderecoTeste1);
+      enderecoTeste2.cidade = cidade1;
+      await db.save(enderecoTeste2);
+
+      const uf1 = db.create(Uf, {
+        nome: 'DF',
+        assignee: [enderecoTeste1],
+      });
+      await db.save(uf1);
+
+      enderecoTeste1.uf = uf1;
+      await db.save(enderecoTeste1);
+      enderecoTeste2.uf = uf1;
+      await db.save(enderecoTeste2);
+
+      const corrida1 = db.create(Corrida, {
+        endereco: enderecoTeste2,
+        estabelecimento: estabelecimentoTeste3,
+        dataHorario: new Date().toLocaleDateString('pt-BR', {
+          hour: '2-digit',
+          minute: '2-digit',
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric',
+        }),
+        preco: 10.32,
+        pedido: '10 bananas',
+        cliente: 'Ana Vitória',
+        entregador: entregadorTeste,
+      });
+      await db.save(corrida1);
     });
   }
 }

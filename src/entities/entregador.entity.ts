@@ -3,9 +3,11 @@ import {
   Entity,
   JoinTable,
   ManyToMany,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Estabelecimento } from './estabelecimento.entity';
+import { Corrida } from './corrida.entity';
 
 @Entity()
 export class Entregador {
@@ -25,6 +27,9 @@ export class Entregador {
     () => Estabelecimento,
     (estabelecimento) => estabelecimento.entregadores,
   )
-  @JoinTable() // This decorator is required on one side of the relationship
+  @JoinTable()
   estabelecimentos: Estabelecimento[];
+
+  @OneToMany(() => Corrida, (corrida) => corrida.entregador)
+  corridas: Corrida[];
 }
