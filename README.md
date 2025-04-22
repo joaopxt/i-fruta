@@ -1,4 +1,4 @@
-📦 API de Entregadores e Estabelecimentos
+📦 iFruta
 Esta API permite gerenciar entregadores e estabelecimentos, incluindo operações de listagem, busca por ID e criação de novos registros.
 
 ▶️ Como usar
