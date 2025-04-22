@@ -12,5 +12,6 @@ Content-Type: application/json
 {
   "nome": "Alexandre Magno",
   "celular": 61995826657,
-  "dataNascimento": 3111996
+  "dataNascimento": 3111996,
+  "cpf": 36098712377
 }

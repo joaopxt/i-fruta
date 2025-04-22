@@ -21,6 +21,9 @@ export class Entregador {
   celular: number;
 
   @Column()
+  cpf: number;
+
+  @Column()
   dataNascimento: number;
 
   @ManyToMany(

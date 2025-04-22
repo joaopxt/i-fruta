@@ -22,6 +22,7 @@ export class AppService {
         nome: 'Joao Victor',
         celular: 61982477725,
         dataNascimento: 17102000,
+        cpf: 36098712377,
       });
 
       await db.save(entregadorTeste);
@@ -29,6 +30,7 @@ export class AppService {
         nome: 'Pedro Victor',
         celular: 61982477725,
         dataNascimento: 17102000,
+        cpf: 48098712327,
       });
 
       await db.save(entregadorTeste2);
