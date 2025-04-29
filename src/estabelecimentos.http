@@ -1,1 +1,24 @@
 GET http://localhost:3000/estabelecimentos HTTP/1.1
+
+
+###
+GET http://localhost:3000/estabelecimentos/3 HTTP/1.1
+
+###
+
+POST http://localhost:3000/estabelecimentos HTTP/1.1
+Content-Type: application/json
+
+{
+  "nome": "Oba",
+  "horarioFuncionamento": "Seg-Dom/18:00-23:00",
+  "foto": "http://urlFoto.com.br/"
+}
+
+###
+PATCH http://localhost:3000/estabelecimentos/3 HTTP/1.1
+Content-Type: application/json
+
+{
+  "entregadores": "Teste"
+}

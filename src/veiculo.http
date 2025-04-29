@@ -1,0 +1,23 @@
+GET http://localhost:3000/veiculo HTTP/1.1
+
+
+###
+GET http://localhost:3000/veiculo/1 HTTP/1.1
+
+###
+
+POST http://localhost:3000/veiculo HTTP/1.1
+Content-Type: application/json
+
+{
+  "tipo": "Bicicleta",
+  "entregadorId": 1
+}
+
+###
+PATCH http://localhost:3000/veiculo/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "tipo": "Motocicleta"
+}

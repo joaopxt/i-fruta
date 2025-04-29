@@ -22,8 +22,4 @@ export class CreateEntregadorDto {
   @IsNotEmpty()
   @IsNumber()
   cpf: number;
-
-  @IsOptional()
-  @IsArray()
-  estabelecimentos?: number[];
 }
